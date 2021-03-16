@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    >
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <androidx.appcompat.widget.Toolbar
+           android:id="@+id/toolbar"
+           android:layout_height="wrap_content"
+           android:layout_width="match_parent"
+           android:background="@color/colorPrimary"
+           android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+       </androidx.appcompat.widget.Toolbar>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:id="@+id/postList"/>
+
+       <com.github.ybq.android.spinkit.SpinKitView
+           xmlns:app="http://schemas.android.com/apk/res-auto"
+           android:id="@+id/spin_kit"
+           style="@style/SpinKitView.Large.ThreeBounce"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:visibility="gone"
+           app:SpinKit_Color="@color/colorAccent" />
+
+   </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/header"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
